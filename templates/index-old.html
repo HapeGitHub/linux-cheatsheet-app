@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux Command Line Cheatsheet</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <script>
+    function copyToClipboard(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied to clipboard:");
+      });
+    }
+
+    function showHelp(command) {
+      fetch(`/help?cmd=${command}`)
+        .then(response => response.text())
+        .then(data => {
+          alert(`Help for ${command}:\n\n` + data);
+        })
+        .catch(error => {
+          alert("Error fetching help: " + error);
+        });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Linux Command Line Cheatsheet</h1>
+  </header>
+
+  <section>
+    <h2>Introduction</h2>
+    <p>The Linux command line is a powerful interface used to interact with the operating system. "Bash" (Bourne Again SHell) is one of the most common shell environments. It allows users to run commands, write scripts, manage files, users, and much more.</p>
+  </section>
+
+  <section>
+    <h2>Cheatsheet</h2>
+
+    <article class="command">
+      <h3>ls</h3>
+      <p>List directory contents.</p>
+      <pre id="cmd-ls">ls -la</pre>
+      <button onclick="copyToClipboard('cmd-ls')">Copy</button>
+      <button onclick="showHelp('ls')">Help</button>
+    </article>
+
+    <article class="command">
+      <h3>cd</h3>
+      <p>Change current directory.</p>
+      <pre id="cmd-cd">cd /home/user</pre>
+      <button onclick="copyToClipboard('cmd-cd')">Copy</button>
+      <button onclick="showHelp('cd')">Help</button>
+    </article>
+
+    <article class="command">
+      <h3>find</h3>
+      <p>Search for files in a directory hierarchy.</p>
+      <pre id="cmd-find">find / -name "example.txt"</pre>
+      <button onclick="copyToClipboard('cmd-find')">Copy</button>
+      <button onclick="showHelp('find')">Help</button>
+    </article>
+
+  </section>
+</body>
+</html>

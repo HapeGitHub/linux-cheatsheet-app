@@ -1,0 +1,152 @@
+{
+  "Introduction": {
+    "description": "Overview of Linux, Bash, distributions, and CLI history.",
+    "commands": [
+      {"name": "Check Bash version", "command": "echo $BASH_VERSION", "description": "Shows the current Bash version.", "examples": ["echo $BASH_VERSION"]},
+      {"name": "Check shell in use", "command": "echo $SHELL", "description": "Displays the current shell.", "examples": ["echo $SHELL"]},
+      {"name": "List available shells", "command": "cat /etc/shells", "description": "Shows available login shells.", "examples": ["cat /etc/shells"]},
+      {"name": "Check distribution", "command": "lsb_release -a", "description": "Displays distribution information.", "examples": ["lsb_release -a"]},
+      {"name": "Check kernel version", "command": "uname -r", "description": "Shows the Linux kernel version.", "examples": ["uname -r"]},
+      {"name": "Command history", "command": "history", "description": "Displays your command history.", "examples": ["history"]},
+      {"name": "Command location", "command": "which ls", "description": "Shows the path of a command.", "examples": ["which ls"]},
+      {"name": "Manual pages", "command": "man ls", "description": "Shows the manual page for a command.", "examples": ["man ls"]},
+      {"name": "Short help", "command": "ls --help", "description": "Displays command usage help.", "examples": ["ls --help"]},
+      {"name": "Shell intro", "command": "info bash", "description": "Shows bash info documentation.", "examples": ["info bash"]}
+    ]
+  },
+  "Basic Commands": {
+    "description": "Common day-to-day commands.",
+    "commands": [
+      {"name": "List files", "command": "ls", "description": "Lists directory contents.", "examples": ["ls", "ls -la"]},
+      {"name": "Change directory", "command": "cd", "description": "Changes current directory.", "examples": ["cd /home/user", "cd .."]},
+      {"name": "Print working directory", "command": "pwd", "description": "Shows current directory.", "examples": ["pwd"]},
+      {"name": "Clear terminal", "command": "clear", "description": "Clears the terminal screen.", "examples": ["clear"]},
+      {"name": "Echo text", "command": "echo", "description": "Prints arguments to the terminal.", "examples": ["echo Hello"]},
+      {"name": "Date and time", "command": "date", "description": "Displays current date and time.", "examples": ["date"]},
+      {"name": "Reboot system", "command": "reboot", "description": "Restarts the system.", "examples": ["sudo reboot"]},
+      {"name": "Shutdown system", "command": "shutdown", "description": "Powers off the system.", "examples": ["sudo shutdown now"]},
+      {"name": "Create directory", "command": "mkdir", "description": "Creates a new directory.", "examples": ["mkdir test"]},
+      {"name": "Remove directory", "command": "rmdir", "description": "Deletes an empty directory.", "examples": ["rmdir old"]}
+    ]
+  },
+  "File Handling": {
+    "description": "Managing and manipulating files.",
+    "commands": [
+      {"name": "Copy file", "command": "cp", "description": "Copies files or directories.", "examples": ["cp file1.txt file2.txt"]},
+      {"name": "Move file", "command": "mv", "description": "Moves or renames files.", "examples": ["mv oldname.txt newname.txt"]},
+      {"name": "Remove file", "command": "rm", "description": "Deletes files or directories.", "examples": ["rm file.txt"]},
+      {"name": "Create empty file", "command": "touch", "description": "Creates an empty file.", "examples": ["touch file.txt"]},
+      {"name": "File contents", "command": "cat", "description": "Displays file contents.", "examples": ["cat file.txt"]},
+      {"name": "Search in file", "command": "grep", "description": "Searches for patterns in files.", "examples": ["grep 'error' logfile"]},
+      {"name": "Count lines/words", "command": "wc", "description": "Counts lines, words, bytes.", "examples": ["wc -l file.txt"]},
+      {"name": "Find files", "command": "find", "description": "Searches for files.", "examples": ["find /home -name '*.txt'"]},
+      {"name": "Disk usage", "command": "du", "description": "Shows disk usage.", "examples": ["du -sh *"]},
+      {"name": "File type", "command": "file", "description": "Determines file type.", "examples": ["file image.png"]}
+    ]
+  },
+  "User Management": {
+    "description": "Commands to manage users and groups.",
+    "commands": [
+      {"name": "Current user", "command": "whoami", "description": "Prints current user.", "examples": ["whoami"]},
+      {"name": "Switch user", "command": "su", "description": "Switches to another user.", "examples": ["su - username"]},
+      {"name": "Add user", "command": "adduser", "description": "Creates a new user.", "examples": ["sudo adduser newuser"]},
+      {"name": "Delete user", "command": "deluser", "description": "Deletes a user.", "examples": ["sudo deluser olduser"]},
+      {"name": "User groups", "command": "groups", "description": "Shows groups of a user.", "examples": ["groups"]},
+      {"name": "Change password", "command": "passwd", "description": "Updates a password.", "examples": ["passwd"]},
+      {"name": "User info", "command": "id", "description": "Prints UID, GID and groups.", "examples": ["id"]},
+      {"name": "Group add", "command": "addgroup", "description": "Creates a group.", "examples": ["sudo addgroup devs"]},
+      {"name": "Group delete", "command": "delgroup", "description": "Deletes a group.", "examples": ["sudo delgroup devs"]},
+      {"name": "Change ownership", "command": "chown", "description": "Changes file owner.", "examples": ["sudo chown user file"]}
+    ]
+  },
+  "System Tools": {
+    "description": "Monitor and manage system resources.",
+    "commands": [
+      {"name": "System info", "command": "uname -a", "description": "Displays system information.", "examples": ["uname -a"]},
+      {"name": "CPU info", "command": "lscpu", "description": "Displays CPU details.", "examples": ["lscpu"]},
+      {"name": "Memory usage", "command": "free -h", "description": "Shows RAM and swap usage.", "examples": ["free -h"]},
+      {"name": "Disk usage", "command": "df -h", "description": "Shows disk usage.", "examples": ["df -h"]},
+      {"name": "Running processes", "command": "top", "description": "Displays running processes.", "examples": ["top"]},
+      {"name": "Process snapshot", "command": "ps aux", "description": "Lists all processes.", "examples": ["ps aux"]},
+      {"name": "Service status", "command": "systemctl status", "description": "Checks system service status.", "examples": ["systemctl status ssh"]},
+      {"name": "List services", "command": "systemctl list-units", "description": "Lists active services.", "examples": ["systemctl list-units --type=service"]},
+      {"name": "System uptime", "command": "uptime", "description": "Shows system uptime.", "examples": ["uptime"]},
+      {"name": "Log viewer", "command": "journalctl", "description": "Views system logs.", "examples": ["journalctl -xe"]}
+    ]
+  },
+  "Networking": {
+    "description": "Check and troubleshoot network settings.",
+    "commands": [
+      {"name": "Show IP address", "command": "ip a", "description": "Displays network interfaces.", "examples": ["ip a"]},
+      {"name": "Ping host", "command": "ping", "description": "Tests network connectivity.", "examples": ["ping google.com"]},
+      {"name": "Check open ports", "command": "ss -tuln", "description": "Lists listening ports.", "examples": ["ss -tuln"]},
+      {"name": "Check routing table", "command": "ip route", "description": "Shows routing table.", "examples": ["ip route"]},
+      {"name": "Traceroute", "command": "traceroute", "description": "Shows route to host.", "examples": ["traceroute google.com"]},
+      {"name": "DNS lookup", "command": "dig", "description": "Performs DNS queries.", "examples": ["dig example.com"]},
+      {"name": "Interface stats", "command": "ifconfig", "description": "Network interface configuration.", "examples": ["ifconfig"]},
+      {"name": "Download file", "command": "wget", "description": "Downloads file from URL.", "examples": ["wget http://example.com"]},
+      {"name": "Upload with curl", "command": "curl", "description": "Transfers data via URLs.", "examples": ["curl -O http://example.com"]},
+      {"name": "Network testing", "command": "nc", "description": "Netcat for testing ports.", "examples": ["nc -zv host 22"]}
+    ]
+  },
+  "Scripting / Examples": {
+    "description": "Basics and examples of bash scripting.",
+    "commands": [
+      {"name": "Hello World script", "command": "echo 'echo Hello World' > hello.sh", "description": "Simple script to print Hello World.", "examples": ["bash hello.sh"]},
+      {"name": "Make script executable", "command": "chmod +x hello.sh", "description": "Gives execute permissions to script.", "examples": ["chmod +x script.sh"]},
+      {"name": "Variables", "command": "VAR=hello", "description": "Creates a shell variable.", "examples": ["echo $VAR"]},
+      {"name": "Loops", "command": "for i in {1..5}; do echo $i; done", "description": "Simple for loop.", "examples": ["for i in {1..3}; do echo $i; done"]},
+      {"name": "If condition", "command": "if [ $x -gt 5 ]; then echo big; fi", "description": "Basic if statement.", "examples": ["if [ 5 -gt 3 ]; then echo yes; fi"]},
+      {"name": "Read input", "command": "read var", "description": "Reads user input.", "examples": ["read name"]},
+      {"name": "Function", "command": "myfunc() { echo Hello; }", "description": "Defines a function.", "examples": ["myfunc"]},
+      {"name": "Script args", "command": "$0 $1 $2", "description": "Uses script arguments.", "examples": ["echo $1"]},
+      {"name": "Check file existence", "command": "[ -f file ]", "description": "Tests if file exists.", "examples": ["[ -f myfile.txt ] && echo exists"]},
+      {"name": "Script exit code", "command": "echo $?", "description": "Prints last command exit code.", "examples": ["echo $?"]}
+    ]
+  },
+  "Git": {
+    "description": "Version control with Git.",
+    "commands": [
+      {"name": "Initialize repo", "command": "git init", "description": "Creates a new git repo.", "examples": ["git init"]},
+      {"name": "Clone repo", "command": "git clone URL", "description": "Clones a remote repo.", "examples": ["git clone https://github.com/user/repo"]},
+      {"name": "Check status", "command": "git status", "description": "Shows changes.", "examples": ["git status"]},
+      {"name": "Add file", "command": "git add .", "description": "Adds changes to stage.", "examples": ["git add file.txt"]},
+      {"name": "Commit changes", "command": "git commit -m 'msg'", "description": "Creates a commit.", "examples": ["git commit -m 'Initial commit'"]},
+      {"name": "Push changes", "command": "git push", "description": "Uploads commits.", "examples": ["git push origin main"]},
+      {"name": "Pull changes", "command": "git pull", "description": "Fetches updates.", "examples": ["git pull"]},
+      {"name": "View log", "command": "git log", "description": "Shows commit history.", "examples": ["git log"]},
+      {"name": "Branch list", "command": "git branch", "description": "Shows branches.", "examples": ["git branch"]},
+      {"name": "Checkout branch", "command": "git checkout branch", "description": "Switches branch.", "examples": ["git checkout dev"]}
+    ]
+  },
+  "Remote Access": {
+    "description": "SSH and remote command execution.",
+    "commands": [
+      {"name": "SSH login", "command": "ssh user@host", "description": "Connects to remote server.", "examples": ["ssh root@192.168.1.10"]},
+      {"name": "SCP copy", "command": "scp file user@host:/path", "description": "Copies file over SSH.", "examples": ["scp file.txt root@host:/tmp"]},
+      {"name": "RSYNC", "command": "rsync -av file user@host:/", "description": "Efficient file sync.", "examples": ["rsync -av dir/ user@host:/backup"]},
+      {"name": "SSH with key", "command": "ssh -i key.pem user@host", "description": "Connects with private key.", "examples": ["ssh -i mykey.pem root@host"]},
+      {"name": "SSH port forwarding", "command": "ssh -L local:remote user@host", "description": "Creates a local tunnel.", "examples": ["ssh -L 8000:localhost:80 user@host"]},
+      {"name": "Remote command", "command": "ssh user@host command", "description": "Runs a remote command.", "examples": ["ssh root@host ls"]},
+      {"name": "List known hosts", "command": "cat ~/.ssh/known_hosts", "description": "Lists cached host keys.", "examples": ["cat ~/.ssh/known_hosts"]},
+      {"name": "Generate SSH key", "command": "ssh-keygen", "description": "Creates new key pair.", "examples": ["ssh-keygen -t rsa"]},
+      {"name": "Copy SSH key", "command": "ssh-copy-id user@host", "description": "Installs public key.", "examples": ["ssh-copy-id root@host"]},
+      {"name": "SSH config", "command": "~/.ssh/config", "description": "Custom connection config.", "examples": ["Host myserver\n  HostName 1.2.3.4\n  User root"]}
+    ]
+  },
+  "Other Topics": {
+    "description": "Miscellaneous and advanced tools.",
+    "commands": [
+      {"name": "Environment vars", "command": "printenv", "description": "Lists environment variables.", "examples": ["printenv"]},
+      {"name": "Set var", "command": "export VAR=value", "description": "Sets a temporary env var.", "examples": ["export DEBUG=true"]},
+      {"name": "Background task", "command": "command &", "description": "Runs task in background.", "examples": ["sleep 60 &"]},
+      {"name": "List background jobs", "command": "jobs", "description": "Lists current jobs.", "examples": ["jobs"]},
+      {"name": "Kill process", "command": "kill PID", "description": "Sends signal to a process.", "examples": ["kill 1234"]},
+      {"name": "Archive files", "command": "tar -czf", "description": "Creates compressed archive.", "examples": ["tar -czf backup.tar.gz dir/"]},
+      {"name": "Extract archive", "command": "tar -xzf", "description": "Extracts compressed archive.", "examples": ["tar -xzf backup.tar.gz"]},
+      {"name": "Find recent files", "command": "find / -mtime -1", "description": "Files modified in last day.", "examples": ["find /home -mtime -1"]},
+      {"name": "Search command history", "command": "history | grep", "description": "Finds commands in history.", "examples": ["history | grep ssh"]},
+      {"name": "Alias command", "command": "alias ll='ls -la'", "description": "Creates command shortcuts.", "examples": ["alias gs='git status'"]}
+    ]
+  }
+}
