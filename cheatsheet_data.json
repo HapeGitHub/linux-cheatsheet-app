@@ -1,4 +1,6 @@
-{
+#test with corrupt json-file
+// { /
+{  
   "Introduction": {
     "description": "Overview of Linux, Bash, distributions, and CLI history.",
     "commands": [
