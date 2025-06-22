@@ -136,19 +136,25 @@
       {"name": "SSH config", "command": "~/.ssh/config", "description": "Custom connection config.", "examples": ["Host myserver\n  HostName 1.2.3.4\n  User root"]}
     ]
   },
-  "Other Topics": {
+  "GIT Commands": {
+    "description": "Git Infos",
+    "commands": [
+      {"name": "git config", "command": "git config --list", "description": "Lists git config.", "examples": ["printenv"]}
+    ]
+  },
+"Other Topics": {
     "description": "Miscellaneous and advanced tools.",
     "commands": [
       {"name": "Environment vars", "command": "printenv", "description": "Lists environment variables.", "examples": ["printenv"]},
-      {"name": "Set var", "command": "export VAR=value", "description": "Sets a temporary env var.", "examples": ["export DEBUG=true"]},
+      {"name": "Set var", "command": "export VAR=value", "description": "Sets a temporary env var.", "examples": ["export DEBUG=tru>
       {"name": "Background task", "command": "command &", "description": "Runs task in background.", "examples": ["sleep 60 &"]},
       {"name": "List background jobs", "command": "jobs", "description": "Lists current jobs.", "examples": ["jobs"]},
       {"name": "Kill process", "command": "kill PID", "description": "Sends signal to a process.", "examples": ["kill 1234"]},
-      {"name": "Archive files", "command": "tar -czf", "description": "Creates compressed archive.", "examples": ["tar -czf backup.tar.gz dir/"]},
-      {"name": "Extract archive", "command": "tar -xzf", "description": "Extracts compressed archive.", "examples": ["tar -xzf backup.tar.gz"]},
-      {"name": "Find recent files", "command": "find / -mtime -1", "description": "Files modified in last day.", "examples": ["find /home -mtime -1"]},
-      {"name": "Search command history", "command": "history | grep", "description": "Finds commands in history.", "examples": ["history | grep ssh"]},
-      {"name": "Alias command", "command": "alias ll='ls -la'", "description": "Creates command shortcuts.", "examples": ["alias gs='git status'"]}
+      {"name": "Archive files", "command": "tar -czf", "description": "Creates compressed archive.", "examples": ["tar -czf backup.>
+      {"name": "Extract archive", "command": "tar -xzf", "description": "Extracts compressed archive.", "examples": ["tar -xzf back>
+      {"name": "Find recent files", "command": "find / -mtime -1", "description": "Files modified in last day.", "examples": ["find>
+      {"name": "Search command history", "command": "history | grep", "description": "Finds commands in history.", "examples": ["hi>
+      {"name": "Alias command", "command": "alias ll='ls -la'", "description": "Creates command shortcuts.", "examples": ["alias gs>
     ]
   }
 }
